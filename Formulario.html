@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulario</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <a href="index.html" >Home</a> </br>
+        <!--Formularios-->          
+
+        <!--
+            A tag <form> 
+            não apresenta uma referência visual quando criada, mas representa 
+            semanticamente um formulário, então é dentro dela que devemos criar nossos campos
+            e pode aceitar vários tipos de atributos. Ex:
+            accept-charset -> para definir qual o charset será utilizado pelo formulário
+            autocomplete -> irá começar a sugerir valores para o que estamos digitando, com base em valores que foram digitados anteriormente
+            action -> especifica para onde os dados do formulário serão enviados
+            method -> Especifica o método do HTTP que será utilizado para a submissão (get ou post)
+            enctype -> Especifica quando os dados do formulário precisam ser codificados antes de serem enviados (só para POST)
+            novalidate -> Impede a validação dos campos antes da submissão
+            target -> indica onde a página de destino será aberta
+
+            A tag <input />
+            Os campos mais comuns dos formulários são criados pela tag <input />, 
+            que tem o atributo type onde indicamos o tipo de campo que queremos. 
+            Vamos ver cada um deles:
+            
+            •	type="email" ; type="search" ; type="url" -> Em dispositivos que exibem teclado na tela, 
+                como smartphones e tablets, esses tipos fazem com que o teclado exibido seja diferente.
+                Também haverá validação se não escrevermos um formato válido.
+            •   type="number"  -> Indica um campo do tipo number. Em computadores o campo fica com botões 
+            para aumentar e diminuir o número. Em dispositivos com teclado virtual é exibido um teclado numérico.
+            •   type="radio" -> Cria um Radio Button, onde podemos selecionar apenas uma opção.
+            •   type="checkbox" -> o CheckBox serve para selecionarmos mais de uma opção.
+            •   type="date" ; type="time" ; type="datetime-local" -> Serve para selecionar datas e tempo.
+            •   type="range" -> Permite que o usuário escolha um valor entre os valores mínimo e máximo passados.
+            •   type="color" -> Abre uma paleta de cores para a seleção de uma cor.
+            •   type="file" -> Permite que a gente selecione um arquivo de nosso computador.
+            •   type="button" -> Cria um botão.
+            •   type="reset" -> serve para quando o usuário quiser reiniciar o formulário.
+            •   type="submit" -> é usado para que o usuário clique quando quiser enviar o formulário.
+
+            Podemos ainda passar outros atributos na tag, como:
+
+            placeholder - texto que aparece quando o campo está vazio;
+            maxlength - quantidade máxima de caracteres;
+            required - indica que o campo é necessário, não permitindo submeter o formulário se o campo estiver em branco;
+            disabled - deixa o campo desabilitado;
+            readonly - impede edições no campo, permitindo apenas que o usuário leia o valor.
+
+            A tag <select> 
+            nos permite criar uma lista onde podemos selecionar um item. Cada uma das opções é criada pela tag <option>. 
+            O atributo “value” da tag option é o valor a ser enviado ao servidor, e o valor escrito dentro da tag é o 
+            que será exibido ao usuário.
+
+            a tag <datalist> 
+            também recebe um conjunto de <option>, mas ela também tem um id para identificá-la. Enquanto isso, 
+            também temos um input de texto. Ele tem um atributo “list”, onde passamos o id da nossa <datalist>.
+
+            A tag <fieldset> Serve para criarmos um campo dentro do formulário para poder melhor organizar os campos. 
+            A tag <legend> serve para darmos um título à seção do fieldset.
+
+            A tag <label> serve para darmos nomes aos campos. Se passarmos o id do input no atributo “for”, 
+            estaremos indicando ao navegador que o Label é referente àquele campo. Quando o usuário clicar no 
+            texto do Label, o input receberá foco, permitindo que o usuário já entre com os dados.
+
+        -->
+    </br>
+    <form accept-charset="utf-8" autocomplete="on">
+        <input type="text" name="texto"/> </br> </br> 
+        <input type="email" /> </br> </br> 
+        <input type="search" /> </br> </br> 
+        <input type="url" /> </br> </br> 
+        <textarea>Meu Texto</textarea></br> </br> 
+        <input type="radio" name="sexo" checked="checked" /> Homem
+        <input type="radio" name="sexo" /> Mulher </br> </br> 
+        <input type="checkbox" name="cor1" /> Azul
+        <input type="checkbox" name="cor2" /> Vermelho
+        <input type="checkbox" name="cor3" /> Amarelo </br> </br>
+        <input type="date" /> </br> </br>
+        <input type="time" /> </br> </br>
+        <input type="datetime-local" /> </br> </br>
+        <input type="range" min="0" max="10" /> </br> </br>
+        <input type="color" /> </br> </br>
+        <input type="file" /> </br> </br>
+        <input type="button" value="Botão" />
+        <input type="reset" value="Apagar" />
+        <input type="submit" value="Enviar" />
+        </br> </br>
+        <select>
+            <option value="html">HTML 5</option>
+            <option value="css">CSS 3</option>
+            <option value="js">JavaScript</option>
+          </select>
+        </br> </br>
+          <input list="browsers" name="browser">
+            <datalist id="browsers">
+                <option value="Internet Explorer">
+                <option value="Firefox">
+                <option value="Chrome">
+                <option value="Opera">
+                <option value="Safari">
+            </datalist>
+        </br> </br>        
+        <fieldset>
+            <legend>Cadastro</legend>
+            Nome: <input type="text"><br>
+            Email: <input type="text"><br>
+          </fieldset>
+        </br> </br> 
+          <label for="email">Email</label>
+          <input type="text" id="email">         
+    </form>
+      
+    <!--
+        Tag <output>
+        Esse campo serve para exibirmos a saída de alguma entrada.
+        Neste exemplo, utilizamos o range e um campo de número que o usuário pode mudar à vontade. 
+        Conforme os valores forem alterados, o campo output exibe o resultado da soma que fizemos por JavaScript.
+    -->
+    <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+        0 <input type="range" id="a" value="50"> 100
+        +
+        <input type="number" id="b" value="50">
+        =
+        <output name="x" for="a b"></output>
+    </form>
+    </body>
+</html>
