@@ -144,7 +144,42 @@
           <a href="https://google.com" target="_blank" >Google</a> </br>
           <a href="Formulario.html" >Clique aqui para saber sobre Formularios</a> </br>
           
-            
+        <!--Multimidia-->
+        <!--
+            O atributo “alt” serve para descrevermos uma imagem. 
+            Essa descrição será exibida caso haja algum problema ao carregar a imagem
+
+            A tag <figure> é utilizado para marcar uma foto, diagrama, ilustrações, etc no documento. 
+            Ela ajuda a melhorar a semântica em conjunto com a tag <img />.
+
+            A tag <figure> pode receber a tag <figurecaption> para criar uma legenda para a imagem.
+
+        -->
+        <figure>
+            <img src="imagens/html5.png" alt="HTML5"/>
+            <figcaption>Figura 1. - Logo do HTML5</figcaption>
+        </figure>
+
+        <!--
+            A tag de áudio permite colocarmos um player para sons e músicas na nossa página.
+            O atributo “controls” indica que os controles, como play/pause, devem ser exibidos.
+        -->
+        <audio controls>
+            <source src="audios/risadas.mp3" type="audio/mpeg">
+            Your browser does not support the audio tag.
+        </audio>
+          
+        </br> </br>
+
+        <!--
+            A tag <video> funciona da mesma maneira que a tag <audio>, com a diferença que a tag também aceita os 
+            atributos width e height, assim como a tag <img />, para que possamos definir largura e altura do vídeo.
+        -->
+         <video width="320" height="240" controls>
+            <source src="videos/movie.mp4" type="video/mp4">
+         </video>
+          
+
 
     </body>
 </html>
